@@ -21,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
@@ -62,7 +63,13 @@ public class ShowcaseBackendApplication  {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(ShowcaseBackendApplication.class, args);
+		SpringApplication app = new SpringApplication(ShowcaseBackendApplication.class);
+
+		app.run(args);
+	}
+	private static String getPort() {
+		String port = System.getenv("PORT");
+		return port != null ? port : "8080";
 	}
 
 	@Bean
