@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Penelope",
+    "estimatedPrice": 135,
+    "image": "1.png",
+    "category": 1,
+    "genre": 0,
+    "inGallery": false,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Lila",
+    "estimatedPrice": 69,
+    "image": "2.png",
+    "category": 0,
+    "genre": 0,
+    "inGallery": true,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Iona",
+    "estimatedPrice": 111,
+    "image": "3.png",
+    "category": 0,
+    "genre": 2,
+    "inGallery": true,
+    "inCatalog": false
+
+  },
+  {
+    "name": "Barrett",
+    "estimatedPrice": 88,
+    "image": "4.png",
+    "category": 5,
+    "genre": 0,
+    "inGallery": true,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Samantha",
+    "estimatedPrice": 71,
+    "image": "5.png",
+    "category": 2,
+    "genre": 0,
+    "inGallery": false,
+    "inCatalog": false
+
+  },
+  {
+    "name": "Tanner",
+    "estimatedPrice": 30,
+    "image": "6.png",
+    "category": 4,
+    "genre": 1,
+    "inGallery": false,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Rina",
+    "estimatedPrice": 90,
+    "image": "7.png",
+    "category": 3,
+    "genre": 1,
+    "inGallery": true,
+    "inCatalog": false
+
+  },
+  {
+    "name": "Cheyenne",
+    "estimatedPrice": 87,
+    "image": "8.png",
+    "category": 3,
+    "genre": 2,
+    "inGallery": true,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Uma",
+    "estimatedPrice": 58,
+    "image": "9.png",
+    "category": 6,
+    "genre": 0,
+    "inGallery": true,
+    "inCatalog": false
+
+  },
+  {
+    "name": "Lillian",
+    "estimatedPrice": 44,
+    "image": "10.png",
+    "category": 1,
+    "genre": 2,
+    "inGallery": true,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Dolan",
+    "estimatedPrice": 49,
+    "image": "11.png",
+    "category": 3,
+    "genre": 2,
+    "inGallery": true,
+    "inCatalog": true
+
+  },
+  {
+    "name": "Janna",
+    "estimatedPrice": 60,
+    "image": "12.png",
+    "category": 2,
+    "genre": 1,
+    "inGallery": false,
+    "inCatalog": false
+
+  },
+  {
+    "name": "Upton",
+    "estimatedPrice": 42,
+    "image": "13.png",
+    "category": 4,
+    "genre": 1,
+    "inGallery": true,
+    "inCatalog": false
+
+  }
+]
