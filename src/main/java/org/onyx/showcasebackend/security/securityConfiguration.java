@@ -30,6 +30,8 @@ import org.springframework.security.web.server.authentication.logout.DelegatingS
 import org.springframework.security.web.server.authentication.logout.SecurityContextServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.WebSessionServerLogoutHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.session.web.http.CookieSerializer;
+import org.springframework.session.web.http.DefaultCookieSerializer;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -101,4 +103,11 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+//    @Bean
+//    public CookieSerializer cookieSerializer() {
+//        DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
+//        cookieSerializer.setSameSite("None");
+//        cookieSerializer.setUseSecureCookie(true); // Utiliser uniquement HTTPS
+//        return cookieSerializer;
+//    }
 }
