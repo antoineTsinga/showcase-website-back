@@ -7,7 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -35,6 +37,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 @EnableWebSecurity
 public class securityConfiguration extends WebSecurityConfigurerAdapter {
@@ -61,10 +65,16 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         return source;
     }
 
+    @Bean
+    public AuthenticationManager authenticationManager(
+            AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        CustomFilter mupaf = new CustomFilter();
-        mupaf.setAuthenticationManager(authenticationManager());
+
+
         http
                 .authorizeRequests()
                 .antMatchers("/api-docs").hasAnyRole("ADMIN")
@@ -73,16 +83,14 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .httpBasic();
 
-        http.cors().and().csrf().disable().addFilterAt(
-                mupaf,
-                UsernamePasswordAuthenticationFilter.class)
+        http.cors().and().csrf().disable()
 
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/api/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/register").permitAll()
                 .antMatchers(HttpMethod.GET, "api/clients/current").permitAll()
                 .and()
-                .formLogin().successHandler(new Securityhandler())
+                .formLogin()
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/api/logout"))
                 .logoutSuccessUrl("/login");
 
