@@ -3,6 +3,7 @@ package org.onyx.showcasebackend.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -30,6 +31,8 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import java.util.List;
 
 
@@ -103,4 +106,5 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         cookieSerializer.setUseSecureCookie(true); // Utiliser uniquement HTTPS
         return cookieSerializer;
     }
+
 }
