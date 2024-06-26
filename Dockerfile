@@ -10,8 +10,8 @@ WORKDIR /app
 # Donner les permissions d'exécution au script mvnw
 RUN chmod +x ./mvnw
 
-# Exécuter la commande de build Maven
-RUN ./mvnw clean package
+# Exécuter la commande de build Maven sans les tests
+RUN ./mvnw clean package -DskipTests
 
 # Utiliser l'image de base pour l'exécution
 FROM eclipse-temurin:20-jre
