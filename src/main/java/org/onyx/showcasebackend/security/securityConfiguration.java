@@ -42,7 +42,7 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
     UserDetailsService userDetailsService;
 
     @Value("${cors.allowed-origins}")
-    private String allowedOrigins;
+    private String[] allowedOrigins;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -52,7 +52,7 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(allowedOrigins.split(",")));
+        configuration.setAllowedOrigins(List.of(allowedOrigins));
         configuration.setAllowedMethods(List.of("*"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
