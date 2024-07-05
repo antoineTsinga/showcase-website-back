@@ -18,6 +18,6 @@ FROM eclipse-temurin:20-jre
 
 # Copier l'artefact compilé depuis l'étape de build
 COPY --from=build /app/target/showcase-backend-0.0.1-SNAPSHOT.jar /app/showcase-backend.jar
-
+EXPOSE 8080
 # Définir le point d'entrée
 ENTRYPOINT ["java", "-jar", "/app/showcase-backend.jar"]
